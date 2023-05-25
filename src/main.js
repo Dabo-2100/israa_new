@@ -10,8 +10,8 @@ import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 import VueSweetalert2 from "vue-sweetalert2";
 import "sweetalert2/dist/sweetalert2.min.css";
 import {} from "@fortawesome/free-brands-svg-icons";
-import { faPowerOff } from "@fortawesome/free-solid-svg-icons";
-library.add(faPowerOff);
+import { faBars, faPowerOff, faX } from "@fortawesome/free-solid-svg-icons";
+library.add(faPowerOff,faBars,faX);
 
 createApp(App)
   .use(store)

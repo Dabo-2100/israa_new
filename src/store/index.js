@@ -7,6 +7,7 @@ export default createStore({
     CurrentWidth: window.innerWidth,
     LoaderIndex: 0,
     SideMenuIndex: 0,
+    MainBarHeight: 0,
   },
   getters: {},
   mutations: {

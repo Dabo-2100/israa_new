@@ -1,15 +1,19 @@
 <template>
   <MainLoader />
+  <SideMenu />
+  <MainBar />
   <router-view />
 </template>
 
 <script>
 import MainLoader from "@/components/MainLoader.vue";
+import MainBar from "@/components/MainBar.vue";
+import SideMenu from "@/components/SideMenu.vue";
 import $ from "jquery";
 window.$ = window.jQuery = require("jquery");
 export default {
   name: "AppView",
-  components: { MainLoader },
+  components: { MainLoader, MainBar, SideMenu },
   data() {
     return {};
   },
@@ -17,6 +21,10 @@ export default {
     let main = this;
     $(window).resize(function () {
       main.$store.state['CurrentWidth'] = window.innerWidth;
+      main.$store.state['MainBarHeight'] = document.getElementById('MainBar').offsetHeight;
+      if (window.innerWidth > 767) {
+        main.$store.state['SideMenuIndex'] = 0;
+      }
     });
   },
 };
